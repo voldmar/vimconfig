@@ -1,0 +1,39 @@
+[submodule "bundle/django"]
+	path = bundle/django
+	url = https://github.com/vim-scripts/django.vim.git
+[submodule "bundle/html5"]
+	path = bundle/html5
+	url = https://github.com/vim-scripts/HTML5-Syntax-File.git
+[submodule "bundle/javascript"]
+	path = bundle/javascript
+	url = https://github.com/vim-scripts/javascript.vim--welshare.git
+[submodule "bundle/jslint"]
+	path = bundle/jslint
+	url = https://github.com/vim-scripts/compilerjsl.vim.git
+[submodule "bundle/scratch"]
+	path = bundle/scratch
+	url = https://github.com/vim-scripts/Scratch--Palardy.git
+[submodule "bundle/jquerytmpl"]
+	path = bundle/jquerytmpl
+	url = https://github.com/voldmar/jQuery-Template-Vim-Syntax.git
+[submodule "bundle/jquery"]
+	path = bundle/jquery
+	url = https://github.com/vim-scripts/jQuery.git
+[submodule "bundle/json"]
+	path = bundle/json
+	url = https://github.com/vim-scripts/JSON.vim.git
+[submodule "bundle/markdown"]
+	path = bundle/markdown
+	url = https://github.com/vim-scripts/Markdown.git
+[submodule "bundle/python"]
+	path = bundle/python
+	url = https://github.com/vim-scripts/python.vim--Vasiliev.git
+[submodule "bundle/bufexplorer"]
+	path = bundle/bufexplorer
+	url = https://github.com/vim-scripts/bufexplorer.zip.git
+[submodule "bundle/matchit"]
+	path = bundle/matchit
+	url = https://github.com/vim-scripts/matchit.zip.git
+[submodule "bundle/zenburn"]
+	path = bundle/zenburn
+	url = https://github.com/vim-scripts/Zenburn.git
