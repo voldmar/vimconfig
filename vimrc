@@ -73,6 +73,8 @@ set ve=block            " Вольный курсор при блочном вы
 
 " Цвет комментариев
 set t_Co=16
+let g:zenburn_high_Contrast = 1
+" colorscheme zenburn
 highlight Comment ctermfg=Blue
 
 
