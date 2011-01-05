@@ -40,6 +40,3 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = https://github.com/vim-scripts/fugitive.vim.git
-[submodule "bundle/css3"]
-	path = bundle/css3
-	url = https://github.com/vim-scripts/CSS3-Highlights.git
