@@ -72,10 +72,10 @@ set modeline            " Поддержка модлайнов
 set ve=block            " Вольный курсор при блочном выделении
 
 " Цвет комментариев
-set t_Co=16
+set t_Co=256
 let g:zenburn_high_Contrast = 1
-" colorscheme zenburn
-highlight Comment ctermfg=Blue
+colorscheme zenburn
+" highlight Comment ctermfg=Blue
 
 
 "set list                " Отображение непечатных символов
