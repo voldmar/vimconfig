@@ -43,3 +43,12 @@
 [submodule "bundle/css3"]
 	path = bundle/css3
 	url = https://github.com/vim-scripts/css3.git
+[submodule "bundle/rdark"]
+	path = bundle/rdark
+	url = http://github.com/vim-scripts/rdark.git
+[submodule "bundle/rdark-terminal"]
+	path = bundle/rdark-terminal
+	url = http://github.com/vim-scripts/rdark-terminal.git
+[submodule "bundle/nginx"]
+	path = bundle/nginx
+	url = https://github.com/vim-scripts/nginx.vim.git
