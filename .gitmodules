@@ -52,3 +52,6 @@
 [submodule "bundle/nginx"]
 	path = bundle/nginx
 	url = https://github.com/vim-scripts/nginx.vim.git
+[submodule "bundle/colors-solirized"]
+	path = bundle/colors-solirized
+	url = git://github.com/altercation/vim-colors-solarized.git
