@@ -36,7 +36,7 @@ set nohlsearch
 set incsearch
 " set ignorecase
 " set smartcase
-set grepprg=grep\ --exclude-dir='.svn'\ -I\ \E\ -n\ $*\ /dev/null
+set grepprg=grep\ --exclude-dir='.svn'\ -IE\ -n\ $*\ /dev/null
 
 " Поведение строк
 set autoindent          " Отступы
