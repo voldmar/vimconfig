@@ -11,6 +11,7 @@ autocmd!
 set viminfo='100,%,/50,:50,<50,h
 
 set statusline=%{fugitive#statusline()}\ %F%m%r%h%w\ [TYPE=%Y]\ %=[ASCII=\%03.3b]\ [HEX=\%02.2B]\ %l,%v\ %p%%\ of\ %L\ lines
+set path+=templates " Django templates
 
 " Плагин для просмотра манов
 runtime ftplugin/man.vim
@@ -35,7 +36,7 @@ set nohlsearch
 set incsearch
 " set ignorecase
 " set smartcase
-set grepprg=/opt/local/bin/egrep\ --exclude-dir='.svn'\ -I\ -n\ $*\ /dev/null
+set grepprg=grep\ --exclude-dir='.svn'\ -I\ \E\ -n\ $*\ /dev/null
 
 " Поведение строк
 set autoindent          " Отступы
