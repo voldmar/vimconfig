@@ -10,7 +10,7 @@ autocmd!
 
 set viminfo='100,%,/50,:50,<50,h
 
-set statusline=%{fugitive#statusline()}\ %F%m%r%h%w\ [TYPE=%Y]\ %=[ASCII=\%03.3b]\ [HEX=\%02.2B]\ %l,%v\ %p%%\ of\ %L\ lines
+set statusline=%{fugitive#statusline()}\ %f%m%r%h%w\ [TYPE=%Y]\ %=[ASCII=\%03.3b]\ [HEX=\%02.2B]\ %l,%v\ %p%%\ of\ %L\ lines
 set path+=templates " Django templates
 
 " Плагин для просмотра манов
