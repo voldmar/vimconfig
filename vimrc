@@ -166,6 +166,10 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select = 1
 set tags=./tags*,tags
 
+" BufExplorer
+let g:bufExplorerShowDirectories = 1
+let g:bufExplorerShowRelativePath = 1
+let g:bufExplorerSplitOutPathName = 0
 
 " -- EOF -- "
 
