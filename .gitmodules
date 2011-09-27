@@ -58,9 +58,3 @@
 [submodule "bundle/pydoc"]
 	path = bundle/pydoc
 	url = git://github.com/vim-scripts/pydoc.vim.git
-[submodule "bundle/pyflakes"]
-	path = bundle/pyflakes
-	url = git://github.com/vim-scripts/pyflakes.vim.git
-[submodule "bundle/pysmell"]
-	path = bundle/pysmell
-	url = git://github.com/vim-scripts/PySmell.git

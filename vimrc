@@ -26,6 +26,7 @@ set history=200
 set autowriteall        " Записывать перед изменениями
 set hidden              
 
+filetype on
 filetype indent on      " Включить отступы
 filetype plugin on
 
@@ -36,7 +37,7 @@ set nohlsearch
 set incsearch
 " set ignorecase
 " set smartcase
-set grepprg=grep\ -RIEn\ --exclude-dir=.git\ --exclude=tags 
+set grepprg=grep\ -RIEn\ --exclude-dir=.git\ --exclude=tags\ $*
 
 " Поведение строк
 set autoindent          " Отступы
