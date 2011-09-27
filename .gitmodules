@@ -55,3 +55,12 @@
 [submodule "bundle/colors-solirized"]
 	path = bundle/colors-solirized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/pydoc"]
+	path = bundle/pydoc
+	url = git://github.com/vim-scripts/pydoc.vim.git
+[submodule "bundle/pyflakes"]
+	path = bundle/pyflakes
+	url = git://github.com/vim-scripts/pyflakes.vim.git
+[submodule "bundle/pysmell"]
+	path = bundle/pysmell
+	url = git://github.com/vim-scripts/PySmell.git
