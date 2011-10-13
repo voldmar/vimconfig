@@ -35,8 +35,8 @@ filetype plugin on
 " Поиск
 set nohlsearch
 set incsearch
-" set ignorecase
-" set smartcase
+set ignorecase
+set smartcase
 set grepprg=grep\ -RIEn\ --exclude-dir=.git\ --exclude=tags\ $*
 
 " Поведение строк
