@@ -172,5 +172,8 @@ let g:bufExplorerShowDirectories = 1
 let g:bufExplorerShowRelativePath = 1
 let g:bufExplorerSplitOutPathName = 0
 
+" Expand %% to dir of current file
+cabbr <expr> %% expand('%:p:h')
+
 " -- EOF -- "
 
