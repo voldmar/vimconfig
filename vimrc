@@ -54,6 +54,7 @@ set tabstop=4
 set expandtab
 
 " Настройка свертки
+set nofoldenable
 set foldmethod=indent
 set foldlevel=25
 
