@@ -110,6 +110,9 @@ inoremap <silent> <F4> <Esc>:MarksBrowser<CR>
 nnoremap <silent> <C-B> :BufExplorer<CR>
 inoremap <silent> <C-B> <Esc>:VSBufExplorer<CR>
 
+" Use CTRL-A to move to start of the command line
+cnoremap <silent> <C-A> <C-B>
+
 
 
 nnoremap <silent> <D-r> :e %<CR>
