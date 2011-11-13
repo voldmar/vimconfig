@@ -61,3 +61,6 @@
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "bundle/railscasts"]
+	path = bundle/railscasts
+	url = git://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git
