@@ -145,10 +145,12 @@ function! On_HTML_Load()
 endfunction
 
 let python_highlight_all = 1
+let html_no_rendering = 1
 autocmd FileType python map <buffer> <silent> +m :call ShowDoc("<C-R><C-W>")<CR>
 autocmd FileType python set makeprg=pyflakes\ %
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType xhtml set filetype=htmldjango
+autocmd FileType html set filetype=htmldjango
 
 "autocmd FileType python compiler pychecker
 "autocmd BufReadPost quickfix map <buffer> <silent> <CR> :.cc <CR> :ccl
