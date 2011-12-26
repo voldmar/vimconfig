@@ -13,6 +13,9 @@ set viminfo='100,%,/50,:50,<50,h
 set statusline=%{fugitive#statusline()}\ %f%m%r%h%w\ [TYPE=%Y]\ %=[ASCII=\%03.3b]\ [HEX=\%02.2B]\ %l,%v\ %p%%\ of\ %L\ lines
 set path+=templates " Django templates
 
+nnoremap j gj
+nnoremap k gk
+
 " Плагин для просмотра манов
 runtime ftplugin/man.vim
 
@@ -33,11 +36,12 @@ filetype plugin on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Редактирование 
 " Поиск
-set nohlsearch
+set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 set grepprg=grep\ -RIEn\ --exclude-dir=.git\ --exclude=tags\ $*
+nnoremap <leader><space> :nohlsearch<cr>
 
 " Поведение строк
 set autoindent          " Отступы
@@ -76,6 +80,7 @@ set ruler               " Строка статуса
 set modeline            " Поддержка модлайнов
 set ve=block            " Вольный курсор при блочном выделении
 set mouse=a             " Скролл мышкой
+set ttyfast
 
 " Цвет комментариев
 set t_Co=256
@@ -112,6 +117,10 @@ inoremap <silent> <C-B> <Esc>:VSBufExplorer<CR>
 
 " Use CTRL-A to move to start of the command line
 cnoremap <silent> <C-A> <C-B>
+let mapleader=","
+nnoremap / /\v
+vnoremap / /\v
+
 
 
 
