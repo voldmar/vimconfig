@@ -13,6 +13,7 @@ Bundle 'vim-scripts/Railscasts-Theme-GUIand256color.git'
 Bundle 'django.vim'
 Bundle 'scratch.vim'
 Bundle 'python.vim'
+Bundle 'UltiSnips'
 
 filetype plugin indent on
 
