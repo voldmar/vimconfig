@@ -1,10 +1,20 @@
 " Мой конфигурационный файл для VIM 6.x
 " voldmar
 
-" Pathogen
+set nocompatible        " Несовместимость с vi --- так удобнее
 filetype off 
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+set runtimepath+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'vim-scripts/Railscasts-Theme-GUIand256color.git'
+
+Bundle 'django.vim'
+Bundle 'scratch.vim'
+Bundle 'python.vim'
+
+filetype plugin indent on
 
 autocmd!
 
@@ -28,10 +38,6 @@ set history=200
 " Настройки буферов
 set autowriteall        " Записывать перед изменениями
 set hidden              
-
-filetype on
-filetype indent on      " Включить отступы
-filetype plugin on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Редактирование 
@@ -72,7 +78,6 @@ set showmatch           " Показывать совпадающую скобк
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Интерфейс
-set nocompatible        " Несовместимость с vi --- так удобнее
 set backspace=2         " Поведение клавиш
 set termencoding=utf-8  " Кодировка терминала
 syn on                  " Подсветка синтаксиса
