@@ -64,3 +64,6 @@
 [submodule "bundle/railscasts"]
 	path = bundle/railscasts
 	url = git://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/vim-scripts/UltiSnips.git
