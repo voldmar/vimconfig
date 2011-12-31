@@ -87,6 +87,7 @@ set modeline            " Поддержка модлайнов
 set ve=block            " Вольный курсор при блочном выделении
 set mouse=a             " Скролл мышкой
 set ttyfast
+let mapleader=","
 
 " Цвет комментариев
 set t_Co=256
@@ -123,14 +124,6 @@ inoremap <silent> <C-B> <Esc>:VSBufExplorer<CR>
 
 " Use CTRL-A to move to start of the command line
 cnoremap <silent> <C-A> <C-B>
-let mapleader=","
-nnoremap / /\v
-vnoremap / /\v
-
-
-
-
-nnoremap <silent> <D-r> :e %<CR>
 
 " Переключение режима вставки
 set pastetoggle=<D-F11>
