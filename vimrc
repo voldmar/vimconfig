@@ -29,6 +29,8 @@ set viminfo='100,%,/50,:50,<50,h
 set statusline=%{fugitive#statusline()}\ %f%m%r%h%w\ [TYPE=%Y]\ %=[ASCII=\%03.3b]\ [HEX=\%02.2B]\ %l,%v\ %p%%\ of\ %L\ lines
 set path+=templates " Django templates
 
+let mapleader=","
+
 nnoremap j gj
 nnoremap k gk
 
@@ -53,7 +55,7 @@ set incsearch
 set ignorecase
 set smartcase
 set grepprg=grep\ -RIEn\ --exclude-dir=.git\ --exclude=tags\ $*
-nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <leader><space> :set invhlsearch<cr>:set hlsearch?<cr>
 
 " Поведение строк
 set autoindent          " Отступы
@@ -92,7 +94,6 @@ set modeline            " Поддержка модлайнов
 set ve=block            " Вольный курсор при блочном выделении
 set mouse=a             " Скролл мышкой
 set ttyfast
-let mapleader=","
 
 " Цвет комментариев
 set t_Co=256
@@ -162,8 +163,8 @@ let html_no_rendering = 1
 autocmd FileType python map <buffer> <silent> +m :call ShowDoc("<C-R><C-W>")<CR>
 autocmd FileType python set makeprg=pyflakes\ %
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType xhtml set filetype=htmldjango
-autocmd FileType html set filetype=htmldjango
+autocmd FileType xhtml set filetype=htmldjango.html
+autocmd FileType html set filetype=htmldjango.html
 
 "autocmd FileType python compiler pychecker
 "autocmd BufReadPost quickfix map <buffer> <silent> <CR> :.cc <CR> :ccl
@@ -193,6 +194,7 @@ let g:bufExplorerSplitOutPathName = 0
 
 " Expand %% to dir of current file
 cabbr <expr> %% expand('%:p:h')
+
 
 " -- EOF -- "
 
