@@ -14,6 +14,11 @@ Bundle 'django.vim'
 Bundle 'scratch.vim'
 Bundle 'python.vim'
 Bundle 'UltiSnips'
+Bundle 'othree/html5.vim'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'groenewege/vim-less'
+Bundle 'bufexplorer.zip'
+
 
 filetype plugin indent on
 
