@@ -18,6 +18,7 @@ Bundle 'othree/html5.vim'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'groenewege/vim-less'
 Bundle 'bufexplorer.zip'
+Bundle 'mileszs/ack.vim'
 
 
 filetype plugin indent on
