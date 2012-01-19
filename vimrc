@@ -19,6 +19,7 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'groenewege/vim-less'
 Bundle 'bufexplorer.zip'
 Bundle 'mileszs/ack.vim'
+Bundle 'VimClojure'
 
 
 filetype plugin indent on
@@ -56,7 +57,13 @@ set incsearch
 set ignorecase
 set smartcase
 set grepprg=grep\ -RIEn\ --exclude-dir=.git\ --exclude=tags\ $*
+
 nnoremap <leader><space> :set invhlsearch<cr>:set hlsearch?<cr>
+nnoremap <leader>n :set number<cr>
+nnoremap <leader>N :set relativenumber<cr>
+nnoremap <leader>r :source ~/.vimrc<cr>
+
+set matchtime=3
 
 " Поведение строк
 set autoindent          " Отступы
@@ -103,15 +110,17 @@ colorscheme railscasts
 " highlight Comment ctermfg=Blue
 
 
-"set list                " Отображение непечатных символов
-"set listchars=trail:~   " Отображать тильду вместо замыкающих пробелов
-
 set laststatus=2        " Всегда показыать строку статуса
 set wildmenu            " Более удобное дополнение
 set showcmd             " Показывать введенные команды и размер выделенной области
 
 set vb t_vb=            " Отключить пищалку
 set splitbelow          " Новое окно появляется внизу
+
+
+set list
+set listchars=tab:▸\ ,extends:❯,precedes:❮
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Горячие клавиши 
@@ -195,6 +204,33 @@ let g:bufExplorerSplitOutPathName = 0
 
 " Expand %% to dir of current file
 cabbr <expr> %% expand('%:p:h')
+
+" Settings for VimClojure
+let vimclojure#HighlightBuiltins = 1
+let vimclojure#ParenRainbow = 1
+let vimclojure#WantNailgun   = 1
+let vimclojure#NailgunClient ="ng"
+
+set autoread
+set title
+set shiftround
+set backupskip=/tmp/*,/private/tmp/*
+
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.sw?                            " Vim swap files
+set wildignore+=*.DS_Store                       " OSX bullshit
+set wildignore+=*.pyc                            " Python byte code
+
+set undodir=~/.vim/tmp/undo/     " undo files
+set backupdir=~/.vim/tmp/backup/ " backups
+set directory=~/.vim/tmp/swap/   " swap files
+set backup                        " enable backups
+set noswapfile                    " It's 2012, Vim.
+
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " Highlight VCS conflict markers
 
 
 " -- EOF -- "
