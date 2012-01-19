@@ -20,6 +20,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'bufexplorer.zip'
 Bundle 'mileszs/ack.vim'
 Bundle 'VimClojure'
+Bundle 'ctrlp.vim'
 
 
 filetype plugin indent on
@@ -232,6 +233,8 @@ set noswapfile                    " It's 2012, Vim.
 
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " Highlight VCS conflict markers
 
+" CtrlP settings
+let g:ctrlp_extensions = ['tag', 'quickfix', 'dir']
 
 " -- EOF -- "
 
