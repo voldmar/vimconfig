@@ -22,6 +22,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'bufexplorer.zip'
 Bundle 'mileszs/ack.vim'
 Bundle 'ctrlp.vim'
+Bundle 'slimv.vim'
 
 
 filetype plugin indent on
@@ -207,12 +208,6 @@ let g:bufExplorerSplitOutPathName = 0
 " Expand %% to dir of current file
 cabbr <expr> %% expand('%:p:h')
 
-" Settings for VimClojure
-let vimclojure#HighlightBuiltins = 1
-let vimclojure#ParenRainbow = 1
-let vimclojure#WantNailgun   = 1
-let vimclojure#NailgunClient ="ng"
-
 set autoread
 set title
 set shiftround
@@ -236,6 +231,8 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " Highlight VCS conflict marker
 
 " CtrlP settings
 let g:ctrlp_extensions = ['tag', 'quickfix', 'dir']
+
+let g:slimv_repl_syntax = 1
 
 " -- EOF -- "
 
