@@ -6,6 +6,8 @@ filetype off
 set runtimepath+=~/.vim/bundle/vundle
 call vundle#rc()
 
+Bundle 'gmarik/vundle'
+
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/Railscasts-Theme-GUIand256color.git'
@@ -19,7 +21,6 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'groenewege/vim-less'
 Bundle 'bufexplorer.zip'
 Bundle 'mileszs/ack.vim'
-Bundle 'VimClojure'
 Bundle 'ctrlp.vim'
 
 
