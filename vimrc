@@ -6,10 +6,13 @@ filetype off
 set runtimepath+=~/.vim/bundle/vundle
 call vundle#rc()
 
+map <leader>T <Plug>TaskList
+
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-git'
 Bundle 'vim-scripts/Railscasts-Theme-GUIand256color.git'
 
 Bundle 'django.vim'
@@ -23,6 +26,13 @@ Bundle 'bufexplorer.zip'
 Bundle 'mileszs/ack.vim'
 Bundle 'ctrlp.vim'
 Bundle 'slimv.vim'
+Bundle 'ervandew/supertab'
+Bundle 'mitechie/pyflakes-pathogen'
+Bundle 'sjl/gundo.vim'
+Bundle 'fs111/pydoc.vim'
+Bundle 'reinh/vim-makegreen'
+Bundle 'vim-scripts/TaskList.vim'
+Bundle 'sontek/rope-vim'
 
 
 filetype plugin indent on
