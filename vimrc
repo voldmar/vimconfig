@@ -37,12 +37,69 @@ Bundle 'sontek/rope-vim'
 
 filetype plugin indent on
 
-autocmd!
 
-set viminfo='100,%,/50,:50,<50,h
-
-set statusline=%{fugitive#statusline()}\ %f%m%r%h%w\ [TYPE=%Y]\ %=[ASCII=\%03.3b]\ [HEX=\%02.2B]\ %l,%v\ %p%%\ of\ %L\ lines
+set autoindent          " Отступы
+set autoread
+set autowriteall        " Записывать перед изменениями
+set backspace=2         " Поведение клавиш
+set backup                        " enable backups
+set backupdir=~/.vim/tmp/backup/ " backups
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim/tmp/swap/   " swap files
+set expandtab
+set foldlevel=25
+set foldmethod=indent
+set grepprg=grep\ -RIEn\ --exclude-dir=.git\ --exclude=tags\ $*
+set hidden              
+set history=200
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2        " Всегда показыать строку статуса
+set linebreak           " Не разрывавать посреди слова при переносах
+set list
+set listchars=tab:▸\ ,extends:❯,precedes:❮
+set matchtime=3
+set modeline            " Поддержка модлайнов
+set mouse=a             " Скролл мышкой
+set nofoldenable
+set noswapfile                    " It's 2012, Vim.
+set nowrap              " Не разрывать строки
+set number              " Номера строк
+set pastetoggle=<Leader>p
 set path+=templates " Django templates
+set ruler               " Строка статуса
+set scrolloff=3         " Количество строк вокруг курсора внизу/вверху
+set shiftround
+set shiftwidth=4
+set showcmd             " Показывать введенные команды и размер выделенной области
+set showmatch           " Показывать совпадающую скобку
+set sidescrolloff=5     " Количество символов вокруг курсора справа
+set smartcase
+set softtabstop=4
+set splitbelow          " Новое окно появляется внизу
+set statusline=%{fugitive#statusline()}\ %f%m%r%h%w\ [TYPE=%Y]\ %=[ASCII=\%03.3b]\ [HEX=\%02.2B]\ %l,%v\ %p%%\ of\ %L\ lines
+set t_Co=256
+set tabstop=4
+set tags=./tags*,tags
+set termencoding=utf-8  " Кодировка терминала
+set title
+set ttyfast
+set undodir=~/.vim/tmp/undo/     " undo files
+set vb t_vb=            " Отключить пищалку
+set ve=block            " Вольный курсор при блочном выделении
+set viminfo='100,%,/50,:50,<50,h
+set wildignore+=*.DS_Store                       " OSX bullshit
+set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.pyc                            " Python byte code
+set wildignore+=*.sw?                            " Vim swap files
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildmenu            " Более удобное дополнение
+syn on                  " Подсветка синтаксиса
+colorscheme railscasts
+
 
 let mapleader=","
 
@@ -55,90 +112,14 @@ runtime ftplugin/man.vim
 " Улучшенный %
 runtime macros/matchit.vim
 
-" Настройки истории
-set history=200
-
-" Настройки буферов
-set autowriteall        " Записывать перед изменениями
-set hidden              
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Редактирование 
-" Поиск
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set grepprg=grep\ -RIEn\ --exclude-dir=.git\ --exclude=tags\ $*
-
 nnoremap <leader><space> :set invhlsearch<cr>:set hlsearch?<cr>
 nnoremap <leader>n :set number<cr>
 nnoremap <leader>N :set relativenumber<cr>
 nnoremap <leader>r :source ~/.vimrc<cr>
 
-set matchtime=3
-
-" Поведение строк
-set autoindent          " Отступы
-set scrolloff=3         " Количество строк вокруг курсора внизу/вверху
-set sidescrolloff=5     " Количество символов вокруг курсора справа
-set number              " Номера строк
-set nowrap              " Не разрывать строки
-set linebreak           " Не разрывавать посреди слова при переносах
-
-" Настройки табуляторов
-set softtabstop=4
-set shiftwidth=4
-set tabstop=4
-set expandtab
-
-" Настройка свертки
-set nofoldenable
-set foldmethod=indent
-set foldlevel=25
-
-" Показывать выделение после сдвига
 vnoremap < <gv
 vnoremap > >gv
 
-set showmatch           " Показывать совпадающую скобку
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Интерфейс
-set backspace=2         " Поведение клавиш
-set termencoding=utf-8  " Кодировка терминала
-syn on                  " Подсветка синтаксиса
-set ruler               " Строка статуса
-set modeline            " Поддержка модлайнов
-set ve=block            " Вольный курсор при блочном выделении
-set mouse=a             " Скролл мышкой
-set ttyfast
-
-" Цвет комментариев
-set t_Co=256
-let g:zenburn_high_Contrast = 1
-colorscheme railscasts
-" highlight Comment ctermfg=Blue
-
-
-set laststatus=2        " Всегда показыать строку статуса
-set wildmenu            " Более удобное дополнение
-set showcmd             " Показывать введенные команды и размер выделенной области
-
-set vb t_vb=            " Отключить пищалку
-set splitbelow          " Новое окно появляется внизу
-
-
-set list
-set listchars=tab:▸\ ,extends:❯,precedes:❮
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Горячие клавиши 
-
-" Передвижение
 map H ^
 map L $
 
@@ -155,7 +136,6 @@ inoremap <silent> <C-B> <Esc>:VSBufExplorer<CR>
 cnoremap <silent> <C-A> <C-B>
 
 " Переключение режима вставки
-set pastetoggle=<D-F11>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -183,14 +163,12 @@ endfunction
 
 let python_highlight_all = 1
 let html_no_rendering = 1
+
+autocmd!
 autocmd FileType python map <buffer> <silent> +m :call ShowDoc("<C-R><C-W>")<CR>
 autocmd FileType python set makeprg=pyflakes\ %
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType xhtml set filetype=htmldjango.html
 autocmd FileType html set filetype=htmldjango.html
-
-"autocmd FileType python compiler pychecker
-"autocmd BufReadPost quickfix map <buffer> <silent> <CR> :.cc <CR> :ccl
 
 function! ShowDoc(name)
   enew
@@ -208,7 +186,6 @@ endfunction
 let Tlist_Ctags_Cmd = '/opt/local/bin/ctags'
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select = 1
-set tags=./tags*,tags
 
 " BufExplorer
 let g:bufExplorerShowDirectories = 1
@@ -217,25 +194,6 @@ let g:bufExplorerSplitOutPathName = 0
 
 " Expand %% to dir of current file
 cabbr <expr> %% expand('%:p:h')
-
-set autoread
-set title
-set shiftround
-set backupskip=/tmp/*,/private/tmp/*
-
-set wildignore+=.hg,.git,.svn                    " Version control
-set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
-set wildignore+=*.sw?                            " Vim swap files
-set wildignore+=*.DS_Store                       " OSX bullshit
-set wildignore+=*.pyc                            " Python byte code
-
-set undodir=~/.vim/tmp/undo/     " undo files
-set backupdir=~/.vim/tmp/backup/ " backups
-set directory=~/.vim/tmp/swap/   " swap files
-set backup                        " enable backups
-set noswapfile                    " It's 2012, Vim.
 
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " Highlight VCS conflict markers
 
