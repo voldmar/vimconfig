@@ -7,6 +7,8 @@ filetype off
 set runtimepath+=~/.vim/bundle/vundle
 call vundle#rc()
 
+let mapleader=","
+
 " ,T is defined in other 
 map <leader>T <Plug>TaskList
 
@@ -49,6 +51,7 @@ set backspace=2
 set backup
 set backupdir=~/.vim/tmp/backup/
 set backupskip=/tmp/*,/private/tmp/*
+set cursorline
 set directory=~/.vim/tmp/swap/
 set expandtab
 set foldlevel=25
@@ -76,6 +79,7 @@ set ruler
 set scrolloff=3
 set shiftround
 set shiftwidth=4
+set showbreak=↪
 set showcmd 
 set showmatch
 set sidescrolloff=5
@@ -105,7 +109,8 @@ set wildmenu
 syn on
 colorscheme railscasts
 
-let mapleader=","
+" let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+" let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " Normal navigation in wrap files
 nnoremap j gj
@@ -118,6 +123,7 @@ nnoremap <leader><space> :set invhlsearch<cr>:set hlsearch?<cr>
 nnoremap <leader>n :set number<cr>
 nnoremap <leader>N :set relativenumber<cr>
 nnoremap <leader>r :source ~/.vimrc<cr>
+nnoremap K <nop>
 
 vnoremap < <gv
 vnoremap > >gv
@@ -132,28 +138,32 @@ inoremap <silent> <F3> <Esc>:TlistToggle<CR>
 nnoremap <silent> <F4> :MarksBrowser<CR>
 inoremap <silent> <F4> <Esc>:MarksBrowser<CR>
 nnoremap <silent> <C-B> :BufExplorer<CR>
-inoremap <silent> <C-B> <Esc>:VSBufExplorer<CR>
+inoremap <silent> <C-B> <Esc>:BufExplorer<CR>
 
-autocmd BufReadPost *.[ch] call On_C_Load()
-autocmd BufReadPost *.{[Hh][Tt][Mm]?},*.tpl call On_HTML_Load()
-autocmd BufReadPost *.phtml set filetype=php
-au! BufRead,BufNewFile *.json setfiletype json 
+" Easy buffer navigation
+noremap <C-h>  <C-w>h
+noremap <C-j>  <C-w>j
+noremap <C-k>  <C-w>k
+noremap <C-l>  <C-w>l
+noremap <leader>v <C-w>v
+
+nnoremap <leader>h :help <c-r><c-w><CR>
+
+" Restore position on loading buffer
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
 " markdown
-augroup mkd
-    autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
-    autocmd BufRead,BufNewFile *.mkd setfiletype mkd
+augroup markdown
+    autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
+    autocmd BufRead,BufNewFile *.md setfiletype 
 augroup END
 
-function! On_C_Load()
-    set cindent
-    set formatoptions=cqr
-endfunction
-
-function! On_HTML_Load()
-    runtime! syntax/html.vim
-endfunction
+" Show trailing spaces in 
+augroup trailing
+    au!
+    au InsertEnter * :set listchars-=trail:⌴
+    au InsertLeave * :set listchars+=trail:⌴
+augroup END
 
 let python_highlight_all = 1
 let html_no_rendering = 1
