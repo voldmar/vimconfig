@@ -14,6 +14,7 @@ map <leader>T <Plug>TaskList
 
 Bundle 'gmarik/vundle'
 
+Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-git'
