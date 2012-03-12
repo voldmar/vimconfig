@@ -35,7 +35,6 @@ Bundle 'ervandew/supertab'
 Bundle 'mitechie/pyflakes-pathogen'
 Bundle 'sjl/gundo.vim'
 Bundle 'fs111/pydoc.vim'
-Bundle 'reinh/vim-makegreen'
 Bundle 'vim-scripts/TaskList.vim'
 Bundle 'sontek/rope-vim'
 
@@ -44,6 +43,7 @@ filetype plugin indent on
 
 " It should be here because syntax highlight will be off overwise
 autocmd!
+
 
 set autoindent
 set autoread
@@ -55,9 +55,10 @@ set backupskip=/tmp/*,/private/tmp/*
 set cursorline
 set directory=~/.vim/tmp/swap/
 set expandtab
+set exrc
 set foldlevel=25
 set foldmethod=indent
-set grepprg=grep\ -RIEn\ --exclude-dir=.git\ --exclude=tags\ $*
+set grepprg=grep\ -rien\ --exclude-dir=.git\ --exclude=tags\ $*
 set hidden              
 set history=200
 set hlsearch
@@ -74,10 +75,11 @@ set nofoldenable
 set noswapfile
 set nowrap
 set number
-set pastetoggle=<Leader>p
-set path+=templates " Django templates
+set pastetoggle=<leader>p
+set path+=templates " django templates
 set ruler
 set scrolloff=3
+set secure
 set shiftround
 set shiftwidth=4
 set showbreak=↪
@@ -87,8 +89,8 @@ set sidescrolloff=5
 set smartcase
 set softtabstop=4
 set splitbelow
-set statusline=%{fugitive#statusline()}\ %f%m%r%h%w\ [TYPE=%Y]\ %=[ASCII=\%03.3b]\ [HEX=\%02.2B]\ %l,%v\ %p%%\ of\ %L\ lines
-set t_Co=256
+set statusline=%{fugitive#statusline()}\ %f%m%r%h%w\ [type=%y]\ %=[ascii=\%03.3b]\ [hex=\%02.2b]\ %l,%v\ %p%%\ of\ %l\ lines
+set t_co=256
 set tabstop=4
 set tags=./tags*,tags
 set termencoding=utf-8
@@ -106,7 +108,6 @@ set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=.hg,.git,.svn                    " Version control
 set wildmenu 
-
 syn on
 colorscheme railscasts
 
@@ -132,14 +133,10 @@ vnoremap > >gv
 map H ^
 map L $
 
-nnoremap <silent> <F2> :TRegisters<CR>
-inoremap <silent> <F2> <Esc>:TRegisters<CR>
-nnoremap <silent> <F3> :TlistToggle<CR>
-inoremap <silent> <F3> <Esc>:TlistToggle<CR>
-nnoremap <silent> <F4> :MarksBrowser<CR>
-inoremap <silent> <F4> <Esc>:MarksBrowser<CR>
+noremap <silent> <leader>t :call PyUnitRunTests()<CR>
 nnoremap <silent> <C-B> :BufExplorer<CR>
 inoremap <silent> <C-B> <Esc>:BufExplorer<CR>
+
 
 " Easy buffer navigation
 noremap <C-h>  <C-w>h
@@ -169,8 +166,10 @@ augroup END
 let python_highlight_all = 1
 let html_no_rendering = 1
 
-autocmd FileType python map <buffer> <silent> +m :call ShowDoc("<C-R><C-W>")<CR>
-autocmd FileType python set makeprg=pyflakes\ %
+augroup python
+    autocmd FileType python map <buffer> <silent> +m :call ShowDoc("<C-R><C-W>")<CR>
+    " autocmd FileType python set makeprg=pyflakes\ %'
+augroup END
 autocmd FileType xhtml set filetype=htmldjango.html
 autocmd FileType html set filetype=htmldjango.html
 
@@ -208,6 +207,8 @@ else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+let g:pyflakes_use_quickfix = 0
 
 " -- EOF -- "
 
