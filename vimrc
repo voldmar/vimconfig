@@ -52,6 +52,7 @@ set backspace=2
 set backup
 set backupdir=~/.vim/tmp/backup/
 set backupskip=/tmp/*,/private/tmp/*
+set cmdheight=2 " For bufexplorer
 set cursorline
 set directory=~/.vim/tmp/swap/
 set expandtab
@@ -59,7 +60,7 @@ set exrc
 set foldlevel=25
 set foldmethod=indent
 set grepprg=grep\ -rien\ --exclude-dir=.git\ --exclude=tags\ $*
-set hidden              
+set hidden
 set history=200
 set hlsearch
 set ignorecase
@@ -107,6 +108,7 @@ set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
 set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=.hg,.git,.svn                    " Version control
+set wildignore+=_generated_media*
 set wildmenu 
 syn on
 colorscheme railscasts
@@ -126,6 +128,9 @@ nnoremap <leader>n :set number<cr>
 nnoremap <leader>N :set relativenumber<cr>
 nnoremap <leader>r :source ~/.vimrc<cr>
 nnoremap K <nop>
+nnoremap <leader>u :!sudo service uwsgi restart<cr>
+nnoremap <Left> :cprev<CR>
+nnoremap <Right> :cnext<CR>
 
 vnoremap < <gv
 vnoremap > >gv
