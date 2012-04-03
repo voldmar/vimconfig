@@ -131,6 +131,8 @@ nnoremap K <nop>
 nnoremap <leader>u :!sudo service uwsgi restart<cr>
 nnoremap <Left> :cprev<CR>
 nnoremap <Right> :cnext<CR>
+nnoremap <Up> :colder<CR>
+nnoremap <Down> :cnewer<CR>
 
 vnoremap < <gv
 vnoremap > >gv
