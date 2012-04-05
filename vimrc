@@ -109,6 +109,7 @@ set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=.hg,.git,.svn                    " Version control
 set wildignore+=_generated_media*
+set wildignore+=.env
 set wildmenu 
 syn on
 colorscheme railscasts
