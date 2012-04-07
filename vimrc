@@ -37,7 +37,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'fs111/pydoc.vim'
 Bundle 'vim-scripts/TaskList.vim'
 Bundle 'sontek/rope-vim'
-
+Bundle 'nvie/vim-flake8'
 
 filetype plugin indent on
 
