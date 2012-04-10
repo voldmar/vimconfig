@@ -134,6 +134,7 @@ nnoremap <Left> :cprev<CR>
 nnoremap <Right> :cnext<CR>
 nnoremap <Up> :colder<CR>
 nnoremap <Down> :cnewer<CR>
+nnoremap <leader>8 :call Flake8()<CR>
 
 vnoremap < <gv
 vnoremap > >gv
@@ -141,7 +142,6 @@ vnoremap > >gv
 map H ^
 map L $
 
-noremap <silent> <leader>t :call PyUnitRunTests()<CR>
 nnoremap <silent> <C-B> :BufExplorer<CR>
 inoremap <silent> <C-B> <Esc>:BufExplorer<CR>
 
