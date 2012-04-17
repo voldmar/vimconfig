@@ -133,6 +133,7 @@ nnoremap <Right> :cnext<CR>
 nnoremap <Up> :colder<CR>
 nnoremap <Down> :cnewer<CR>
 nnoremap <leader>8 :call Flake8()<CR>
+nnoremap <leader>a :Ack <C-R><C-W><cr>
 
 vnoremap < <gv
 vnoremap > >gv
