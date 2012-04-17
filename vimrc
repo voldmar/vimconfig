@@ -38,6 +38,7 @@ Bundle 'fs111/pydoc.vim'
 Bundle 'vim-scripts/TaskList.vim'
 Bundle 'sontek/rope-vim'
 Bundle 'nvie/vim-flake8'
+Bundle 'timo/rope-vim'
 
 filetype plugin indent on
 
@@ -217,6 +218,8 @@ else
 endif
 
 let g:pyflakes_use_quickfix = 0
+let g:ropevim_guess_project = 1
+
 
 " -- EOF -- "
 
