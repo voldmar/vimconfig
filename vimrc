@@ -179,6 +179,13 @@ augroup END
 autocmd FileType xhtml set filetype=htmldjango.html
 autocmd FileType html set filetype=htmldjango.html
 
+augroup clojure
+    autocmd FileType clojure set makeprg=lein\ run
+    autocmd FileType clojure set shiftwidth=2
+    autocmd FileType clojure set tabstop=2
+    autocmd FileType clojure set softtabstop=2
+augroup END
+
 function! ShowDoc(name)
   enew
   execute "read !pydoc " . a:name
