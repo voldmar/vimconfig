@@ -35,9 +35,7 @@ Bundle 'mitechie/pyflakes-pathogen'
 Bundle 'sjl/gundo.vim'
 Bundle 'fs111/pydoc.vim'
 Bundle 'vim-scripts/TaskList.vim'
-Bundle 'sontek/rope-vim'
 Bundle 'nvie/vim-flake8'
-Bundle 'timo/rope-vim'
 
 filetype plugin indent on
 
