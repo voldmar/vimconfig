@@ -128,12 +128,13 @@ nnoremap <leader>N :set relativenumber<cr>
 nnoremap <leader>r :source ~/.vimrc<cr>
 nnoremap K <nop>
 nnoremap <leader>u :!sudo service uwsgi restart<cr>
-nnoremap <Left> :cprev<CR>
-nnoremap <Right> :cnext<CR>
-nnoremap <Up> :colder<CR>
-nnoremap <Down> :cnewer<CR>
+nnoremap <Left> :colder<CR>
+nnoremap <Right> :cnewer<CR>
+nnoremap <Up> :cprev<CR>
+nnoremap <Down> :cnext<CR>
 nnoremap <leader>8 :call Flake8()<CR>
 nnoremap <leader>a :Ack <C-R><C-W><cr>
+nnoremap <leader>A :Ack -w <C-R><C-W><cr>
 
 vnoremap < <gv
 vnoremap > >gv
