@@ -164,6 +164,12 @@ augroup markdown
     autocmd BufRead,BufNewFile *.md setfiletype 
 augroup END
 
+" shower
+augroup shower
+    autocmd BufRead *.shower  set ai formatoptions=tcroqn2 comments=n:>
+    autocmd BufRead,BufNewFile *.shower set filetype=markdown 
+augroup END
+
 " Show trailing spaces in 
 augroup trailing
     au!
