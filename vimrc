@@ -11,6 +11,7 @@ let mapleader=","
 
 " ,T is defined in other 
 map <leader>T <Plug>TaskList
+map <leader>s <Plug>Vm_goto_next_sign
 
 Bundle 'gmarik/vundle'
 
@@ -39,6 +40,7 @@ Bundle 'nvie/vim-flake8'
 Bundle 'majutsushi/tagbar'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neocomplcache-snippets-complete'
+Bundle 'voldmar/Visual-Mark'
 
 filetype plugin indent on
 
@@ -238,6 +240,8 @@ let g:ropevim_guess_project = 1
 
 let g:neocomplcache_enable_at_startup = 1
 imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?  "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+highlight SignColor ctermfg=white ctermbg=67
+sign define SignSymbol linehl=SignColor texthl=SignColor text=»
 
 " -- EOF -- "
 
