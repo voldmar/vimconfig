@@ -36,6 +36,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'fs111/pydoc.vim'
 Bundle 'vim-scripts/TaskList.vim'
 Bundle 'nvie/vim-flake8'
+Bundle 'majutsushi/tagbar'
 
 filetype plugin indent on
 
@@ -88,7 +89,7 @@ set sidescrolloff=5
 set smartcase
 set softtabstop=4
 set splitbelow
-set statusline=%{fugitive#statusline()}\ %f%m%r%h%w\ [type=%y]\ %=[ascii=\%03.3b]\ [hex=\%02.2b]\ %l,%v\ %p%%\ of\ %l\ lines
+set statusline=(%{fugitive#head()})\ %f%m%r%h%w:%l%{tagbar#currenttag(':%s','','f')}\ %=\ %l,%v\ %p%%\ of\ %L\ lines
 set t_co=256
 set tabstop=4
 set tags=./tags*,tags
@@ -135,6 +136,7 @@ nnoremap <Down> :cnext<CR>
 nnoremap <leader>8 :call Flake8()<CR>
 nnoremap <leader>a :Ack <C-R><C-W><cr>
 nnoremap <leader>A :Ack -w <C-R><C-W><cr>
+nnoremap <leader>t :TagbarToggle<CR>
 
 vnoremap < <gv
 vnoremap > >gv
