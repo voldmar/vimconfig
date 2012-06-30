@@ -223,7 +223,9 @@ cabbr <expr> %% expand('%:p:h')
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " Highlight VCS conflict markers
 
 " CtrlP settings
-let g:ctrlp_extensions = ['tag', 'quickfix', 'dir']
+let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line']
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files | grep -v -e /migrations/ -e /static/img']
 
 let g:slimv_repl_syntax = 1
 
