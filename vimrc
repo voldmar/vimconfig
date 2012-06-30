@@ -93,7 +93,7 @@ set sidescrolloff=5
 set smartcase
 set softtabstop=4
 set splitbelow
-set statusline=(%{fugitive#head()})\ %f%m%r%h%w:%l%{tagbar#currenttag(':%s','','f')}\ %=\ %l,%v\ %p%%\ of\ %L\ lines
+set statusline=(%{fugitive#head()})\ %f%q%m%r%h%w:%l%{tagbar#currenttag(':%s','','f')}\ %=\ %l,%v\ %p%%\ of\ %L\ lines
 set t_co=256
 set tabstop=4
 set tags=./tags*,tags
