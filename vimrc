@@ -30,13 +30,15 @@ Bundle 'bufexplorer.zip'
 Bundle 'mileszs/ack.vim'
 Bundle 'ctrlp.vim'
 Bundle 'slimv.vim'
-Bundle 'ervandew/supertab'
+"Bundle 'ervandew/supertab'
 Bundle 'mitechie/pyflakes-pathogen'
 Bundle 'sjl/gundo.vim'
 Bundle 'fs111/pydoc.vim'
 Bundle 'vim-scripts/TaskList.vim'
 Bundle 'nvie/vim-flake8'
 Bundle 'majutsushi/tagbar'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neocomplcache-snippets-complete'
 
 filetype plugin indent on
 
@@ -234,6 +236,8 @@ endif
 let g:pyflakes_use_quickfix = 0
 let g:ropevim_guess_project = 1
 
+let g:neocomplcache_enable_at_startup = 1
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?  "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " -- EOF -- "
 
