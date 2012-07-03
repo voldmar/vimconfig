@@ -11,7 +11,7 @@ let mapleader=","
 
 " ,T is defined in other 
 map <leader>T <Plug>TaskList
-map <leader>s <Plug>Vm_goto_next_sign
+map <leader><leader> <Plug>Vm_goto_next_sign
 
 Bundle 'gmarik/vundle'
 
