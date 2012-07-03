@@ -245,5 +245,7 @@ imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?  "\<Plug
 highlight SignColor ctermfg=white ctermbg=67
 sign define SignSymbol linehl=SignColor texthl=SignColor text=»
 
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+
 " -- EOF -- "
 
