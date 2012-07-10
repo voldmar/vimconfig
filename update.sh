@@ -2,7 +2,7 @@
 
 cd $HOME/.vim
 
-git pull
+git pull --rebase
 
 # Some service dirs
 [ -d tmp ] || mkdir -p tmp/backup tmp/swap tmp/undo
