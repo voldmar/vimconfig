@@ -20,6 +20,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-git'
 Bundle 'vim-scripts/Railscasts-Theme-GUIand256color.git'
+Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'django.vim'
 Bundle 'scratch.vim'
@@ -115,7 +116,9 @@ set wildignore+=_generated_media*
 set wildignore+=.env
 set wildmenu 
 syn on
-colorscheme railscasts
+" colorscheme railscasts
+let g:solarized_termcolors=256
+colorscheme solarized
 
 " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 " let &t_EI = "\<Esc>]50;CursorShape=0\x7"
