@@ -170,7 +170,7 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'
 " markdown
 augroup markdown
     autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
-    autocmd BufRead,BufNewFile *.md setfiletype 
+    autocmd BufRead,BufNewFile *.md set filetype=markdown
 augroup END
 
 " shower
