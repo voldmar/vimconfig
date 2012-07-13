@@ -229,6 +229,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " Highlight VCS conflict marker
 let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line']
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files | grep -v -e /migrations/ -e /static/img']
+noremap <C-T> :<C-U>CtrlPTag<CR>
 
 let g:slimv_repl_syntax = 1
 
