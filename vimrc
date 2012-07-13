@@ -192,6 +192,7 @@ let html_no_rendering = 1
 augroup python
     autocmd FileType python map <buffer> <silent> +m :call ShowDoc("<C-R><C-W>")<CR>
     autocmd FileType python set makeprg=pyflakes\ %
+    autocmd FileType python set colorcolumn=80
 augroup END
 autocmd FileType xhtml set filetype=htmldjango.html
 autocmd FileType html set filetype=htmldjango.html
