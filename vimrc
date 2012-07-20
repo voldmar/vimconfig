@@ -42,6 +42,9 @@ Bundle 'majutsushi/tagbar'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'voldmar/Visual-Mark'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'AndrewRadev/linediff.vim'
+Bundle 'voldmar/vim-powerline'
 
 filetype plugin indent on
 
@@ -118,6 +121,7 @@ set wildmenu
 syn on
 " colorscheme railscasts
 let g:solarized_termcolors=256
+set background=dark
 colorscheme solarized
 
 " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -144,6 +148,12 @@ nnoremap <leader>8 :call Flake8()<CR>
 nnoremap <leader>a :Ack <C-R><C-W><cr>
 nnoremap <leader>A :Ack -w <C-R><C-W><cr>
 nnoremap <leader>t :TagbarToggle<CR>
+" Ack for the last search.
+nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
+nnoremap <leader>g :GundoToggle<CR>
+nnoremap <leader>l :Linediff<CR>
+nnoremap <leader>L :LinediffReset<CR>
+
 
 vnoremap < <gv
 vnoremap > >gv
@@ -251,6 +261,11 @@ highlight SignColor ctermfg=white ctermbg=67
 sign define SignSymbol linehl=SignColor texthl=SignColor text=»
 
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+
+let g:Powerline_symbols = 'fancy'
+let g:Powerline_cache_enabled = 1
+call Pl#Theme#ReplaceSegment('tagbar:currenttag', 'tagbar:fullcurrenttag')
+
 
 " -- EOF -- "
 
