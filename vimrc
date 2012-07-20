@@ -123,6 +123,7 @@ syn on
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
+hi PyFlakes ctermbg=52 ctermfg=white
 
 " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 " let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -265,7 +266,7 @@ let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_cache_enabled = 1
 call Pl#Theme#ReplaceSegment('tagbar:currenttag', 'tagbar:fullcurrenttag')
-
+let g:Powerline_colorscheme = 'skwp'
 
 " -- EOF -- "
 
