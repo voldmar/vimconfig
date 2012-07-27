@@ -263,6 +263,7 @@ highlight SignColor ctermfg=white ctermbg=67
 sign define SignSymbol linehl=SignColor texthl=SignColor text=»
 
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+let g:tagbar_autofocus = 1
 
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_cache_enabled = 1
