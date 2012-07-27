@@ -59,6 +59,7 @@ set backspace=2
 set backup
 set backupdir=~/.vim/tmp/backup/
 set backupskip=/tmp/*,/private/tmp/*
+set clipboard=unnamed
 set cmdheight=2 " For bufexplorer
 set cursorline
 set directory=~/.vim/tmp/swap/
