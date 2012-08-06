@@ -45,6 +45,7 @@ Bundle 'voldmar/Visual-Mark'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'AndrewRadev/linediff.vim'
 Bundle 'voldmar/vim-powerline'
+Bundle 'vim-scripts/xterm16.vim'
 
 filetype plugin indent on
 
