@@ -190,6 +190,7 @@ augroup END
 augroup shower
     autocmd BufRead *.shower  set ai formatoptions=tcroqn2 comments=n:>
     autocmd BufRead,BufNewFile *.shower set filetype=markdown 
+    autocmd BufWritePost  *.shower :silent !convert.sh % &
 augroup END
 
 " Show trailing spaces in 
