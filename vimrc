@@ -44,8 +44,8 @@ Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'voldmar/Visual-Mark'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'AndrewRadev/linediff.vim'
-Bundle 'voldmar/vim-powerline'
 Bundle 'vim-scripts/xterm16.vim'
+Bundle 'Lokaltog/vim-powerline'
 
 filetype plugin indent on
 
@@ -270,6 +270,10 @@ let g:tagbar_autofocus = 1
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_cache_enabled = 1
 call Pl#Theme#ReplaceSegment('tagbar:currenttag', 'tagbar:fullcurrenttag')
+call Pl#Theme#RemoveSegment('fileformat')
+call Pl#Theme#RemoveSegment('fileencoding')
+call Pl#Theme#RemoveSegment('filetype')
+call Pl#Theme#RemoveSegment('lineinfo')
 let g:Powerline_colorscheme = 'skwp'
 
 " -- EOF -- "
