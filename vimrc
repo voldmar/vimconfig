@@ -48,6 +48,8 @@ Bundle 'vim-scripts/xterm16.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'ameade/qtpy-vim'
 Bundle 'chilicuil/conque'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 filetype plugin indent on
 
