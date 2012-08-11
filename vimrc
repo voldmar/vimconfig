@@ -232,10 +232,6 @@ function! ShowDoc(name)
   normal 1G 
 endfunction
 
-let Tlist_Ctags_Cmd = '/opt/local/bin/ctags'
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_Close_On_Select = 1
-
 let g:bufExplorerShowDirectories = 1
 let g:bufExplorerShowRelativePath = 1
 let g:bufExplorerSplitOutPathName = 0
