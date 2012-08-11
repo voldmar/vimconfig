@@ -46,6 +46,8 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'AndrewRadev/linediff.vim'
 Bundle 'vim-scripts/xterm16.vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'ameade/qtpy-vim'
+Bundle 'chilicuil/conque'
 
 filetype plugin indent on
 
@@ -207,6 +209,9 @@ augroup python
     autocmd FileType python map <buffer> <silent> +m :call ShowDoc("<C-R><C-W>")<CR>
     autocmd FileType python set makeprg=pyflakes\ %
     autocmd FileType python setlocal colorcolumn=80
+    autocmd FileType python let g:qtpy_shell_command = "./manage.py test"
+    autocmd FileType python nnoremap <leader>m :QTPY method<CR>
+    autocmd FileType python nnoremap <leader>M :QTPY method verbose<CR>
 augroup END
 autocmd FileType xhtml set filetype=htmldjango.html
 autocmd FileType html set filetype=htmldjango.html
