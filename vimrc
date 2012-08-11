@@ -212,6 +212,7 @@ augroup python
     autocmd FileType python let g:qtpy_shell_command = "./manage.py test"
     autocmd FileType python nnoremap <leader>m :QTPY method<CR>
     autocmd FileType python nnoremap <leader>M :QTPY method verbose<CR>
+    autocmd FileType python nnoremap <silent> <leader>P :let @* = expand("%") . ":" .  tagbar#currenttag("%s", "", "f") <CR>
 augroup END
 autocmd FileType xhtml set filetype=htmldjango.html
 autocmd FileType html set filetype=htmldjango.html
