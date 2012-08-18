@@ -50,6 +50,7 @@ Bundle 'ameade/qtpy-vim'
 Bundle 'chilicuil/conque'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'scrooloose/nerdtree'
 
 filetype plugin indent on
 
@@ -160,6 +161,7 @@ nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute
 nnoremap <leader>g :GundoToggle<CR>
 nnoremap <leader>l :Linediff<CR>
 nnoremap <leader>L :LinediffReset<CR>
+nnoremap <leader><tab> :NERDTree .<CR>
 
 
 vnoremap < <gv
