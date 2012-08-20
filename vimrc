@@ -209,6 +209,25 @@ augroup END
 let python_highlight_all = 1
 let html_no_rendering = 1
 
+augroup vimconfig
+    function! GotoBundle()
+        let l:currentline = getline(".")
+        if l:currentline =~ '^\s*Bundle'
+            let l:path = matchstr(l:currentline, "'.*'")
+            if l:path != ""
+                let l:bundle = vundle#config#init_bundle(l:path, [])
+                echo "Opening " . l:bundle.uri
+                exec ":! open " . l:bundle.uri
+            endif
+        else
+            normal! gf
+        endif
+    endfunction
+    if has("mac")
+        autocmd FileType vim nnoremap <buffer> <silent> gf :call GotoBundle()<CR>
+    endif
+augroup END
+
 augroup python
     autocmd FileType python map <buffer> <silent> +m :call ShowDoc("<C-R><C-W>")<CR>
     autocmd FileType python set makeprg=pyflakes\ %
