@@ -69,13 +69,12 @@ set autoindent
 set autoread
 set autowriteall 
 set backspace=2
-set backup
-set backupdir=~/.vim/tmp/backup/
-set backupskip=/tmp/*,/private/tmp/*
+set nobackup
+set nowritebackup
+set noswapfile
 set clipboard=unnamed
 set cmdheight=2 " For bufexplorer
 set cursorline
-set directory=~/.vim/tmp/swap/
 set expandtab
 set exrc
 set foldlevel=25
@@ -94,7 +93,6 @@ set matchtime=3
 set modeline
 set mouse=a
 set nofoldenable
-set noswapfile
 set nowrap
 set number
 set pastetoggle=<leader>p
@@ -117,7 +115,8 @@ set tags=./tags*,tags
 set termencoding=utf-8
 set title
 set ttyfast
-set undodir=~/.vim/tmp/undo/
+set undofile
+set undodir=~/temp/vim-undo/
 set vb t_vb=  " Turn off visual bell
 set ve=block
 set viminfo='100,%,/50,:50,<50,h
