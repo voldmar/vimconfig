@@ -19,8 +19,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-git'
-Bundle 'vim-scripts/Railscasts-Theme-GUIand256color.git'
-Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'django.vim'
 Bundle 'scratch.vim'
@@ -44,13 +42,22 @@ Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'voldmar/Visual-Mark'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'AndrewRadev/linediff.vim'
-Bundle 'vim-scripts/xterm16.vim'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'ameade/qtpy-vim'
 Bundle 'chilicuil/conque'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'scrooloose/nerdtree'
+
+" Color schemes
+if $TERM == "xterm-256color"
+    Bundle 'altercation/vim-colors-solarized'
+    Bundle 'vim-scripts/Railscasts-Theme-GUIand256color.git'
+    let g:Powerline_symbols = 'fancy'
+    let g:Powerline_cache_enabled = 1
+    let g:Powerline_colorscheme = 'skwp'
+    Bundle 'Lokaltog/vim-powerline'
+endif
+Bundle 'vim-scripts/xterm16.vim'
 
 filetype plugin indent on
 
@@ -105,7 +112,6 @@ set smartcase
 set softtabstop=4
 set splitbelow
 set statusline=(%{fugitive#head()})\ %f%q%m%r%h%w:%l%{tagbar#currenttag(':%s','','f')}\ %=\ %l,%v\ %p%%\ of\ %L\ lines
-set t_co=256
 set tabstop=4
 set tags=./tags*,tags
 set termencoding=utf-8
@@ -126,11 +132,17 @@ set wildignore+=_generated_media*
 set wildignore+=.env
 set wildmenu 
 syn on
-" colorscheme railscasts
-let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
 hi PyFlakes ctermbg=52 ctermfg=white
+
+" Must be after :syn on
+if $TERM == "xterm-256color"
+    set t_Co=256
+    let g:solarized_termcolors=&t_Co
+    colorscheme solarized
+elseif $TERM == "xterm-color" || $TERM == "xterm"
+    colorscheme xterm16
+endif
 
 " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 " let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -292,14 +304,13 @@ sign define SignSymbol linehl=SignColor texthl=SignColor text=»
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 let g:tagbar_autofocus = 1
 
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_cache_enabled = 1
-call Pl#Theme#ReplaceSegment('tagbar:currenttag', 'tagbar:fullcurrenttag')
-call Pl#Theme#RemoveSegment('fileformat')
-call Pl#Theme#RemoveSegment('fileencoding')
-call Pl#Theme#RemoveSegment('filetype')
-call Pl#Theme#RemoveSegment('lineinfo')
-let g:Powerline_colorscheme = 'skwp'
+if exists("g:Powerline_loaded")
+    call Pl#Theme#ReplaceSegment('tagbar:currenttag', 'tagbar:fullcurrenttag')
+    call Pl#Theme#RemoveSegment('fileformat')
+    call Pl#Theme#RemoveSegment('fileencoding')
+    call Pl#Theme#RemoveSegment('filetype')
+    call Pl#Theme#RemoveSegment('lineinfo')
+endif
 
 " -- EOF -- "
 
