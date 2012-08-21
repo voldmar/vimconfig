@@ -47,6 +47,7 @@ Bundle 'chilicuil/conque'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 
 " Color schemes
 if $TERM == "xterm-256color"
@@ -309,6 +310,11 @@ if exists("g:Powerline_loaded")
     call Pl#Theme#RemoveSegment('fileencoding')
     call Pl#Theme#RemoveSegment('filetype')
     call Pl#Theme#RemoveSegment('lineinfo')
+endif
+
+if exists("g:loaded_nerd_tree")
+    let g:NERDTreeQuitOnOpen = 1
+    nnoremap <leader><tab> :NERDTreeToggle .<CR>
 endif
 
 " -- EOF -- "
