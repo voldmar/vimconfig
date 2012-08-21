@@ -173,7 +173,7 @@ nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute
 nnoremap <leader>g :GundoToggle<CR>
 nnoremap <leader>l :Linediff<CR>
 nnoremap <leader>L :LinediffReset<CR>
-nnoremap <leader><tab> :NERDTree .<CR>
+nnoremap <leader>R :silent redraw!<CR>
 
 
 vnoremap < <gv
