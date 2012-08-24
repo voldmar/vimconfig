@@ -48,6 +48,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'vim-scripts/applescript.vim'
 
 " Color schemes
 if $TERM == "xterm-256color"
@@ -257,6 +258,10 @@ augroup clojure
     autocmd FileType clojure set shiftwidth=2
     autocmd FileType clojure set tabstop=2
     autocmd FileType clojure set softtabstop=2
+augroup END
+
+augroup applescript
+    autocmd BufRead,BufNewFile *.applescript set filetype=applescript
 augroup END
 
 function! ShowDoc(name)
