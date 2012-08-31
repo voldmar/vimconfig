@@ -29,7 +29,6 @@ Bundle 'groenewege/vim-less'
 Bundle 'bufexplorer.zip'
 Bundle 'mileszs/ack.vim'
 Bundle 'ctrlp.vim'
-Bundle 'slimv.vim'
 "Bundle 'ervandew/supertab'
 Bundle 'mitechie/pyflakes-pathogen'
 Bundle 'sjl/gundo.vim'
@@ -49,6 +48,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/applescript.vim'
+Bundle 'emezeske/paredit.vim'
 
 " Color schemes
 if $TERM == "xterm-256color"
@@ -287,8 +287,6 @@ let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line']
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files | grep -v -e /migrations/ -e /static/img']
 noremap <C-T> :<C-U>CtrlPTag<CR>
-
-let g:slimv_repl_syntax = 1
 
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
