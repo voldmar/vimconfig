@@ -157,7 +157,7 @@ runtime macros/matchit.vim
 nnoremap <leader><space> :set invhlsearch<cr>:set hlsearch?<cr>
 nnoremap <leader>n :set number<cr>
 nnoremap <leader>N :set relativenumber<cr>
-nnoremap <leader>r :source ~/.vimrc<cr>
+nnoremap <leader>R :source ~/.vimrc<cr>
 nnoremap K <nop>
 nnoremap <leader>u :!sudo service uwsgi restart<cr>
 nnoremap <Left> :colder<CR>
@@ -173,7 +173,7 @@ nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute
 nnoremap <leader>g :GundoToggle<CR>
 nnoremap <leader>l :Linediff<CR>
 nnoremap <leader>L :LinediffReset<CR>
-nnoremap <leader>R :silent redraw!<CR>
+nnoremap <leader>r :silent redraw!<CR>
 
 
 vnoremap < <gv
