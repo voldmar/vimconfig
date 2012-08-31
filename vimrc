@@ -98,7 +98,6 @@ set nofoldenable
 set nowrap
 set number
 set pastetoggle=<leader>p
-set path+=templates " django templates
 set ruler
 set scrolloff=3
 set secure
@@ -249,6 +248,7 @@ augroup python
     autocmd FileType python nnoremap <leader>m :QTPY method<CR>
     autocmd FileType python nnoremap <leader>M :QTPY method verbose<CR>
     autocmd FileType python nnoremap <silent> <leader>P :let @* = expand("%") . ":" .  tagbar#currenttag("%s", "", "f") <CR>
+    autocmd FileType python set path+=templates " django templates
 augroup END
 autocmd FileType xhtml set filetype=htmldjango.html
 autocmd FileType html set filetype=htmldjango.html
