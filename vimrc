@@ -174,6 +174,7 @@ nnoremap <leader>g :GundoToggle<CR>
 nnoremap <leader>l :Linediff<CR>
 nnoremap <leader>L :LinediffReset<CR>
 nnoremap <leader>r :silent redraw!<CR>
+nnoremap <leader><Tab> :NERDTreeToggle .<CR>
 
 
 vnoremap < <gv
@@ -315,10 +316,7 @@ if exists("g:Powerline_loaded")
     call Pl#Theme#RemoveSegment('lineinfo')
 endif
 
-if exists("g:loaded_nerd_tree")
-    let g:NERDTreeQuitOnOpen = 1
-    nnoremap <leader><tab> :NERDTreeToggle .<CR>
-endif
+let g:NERDTreeQuitOnOpen = 1
 
 " -- EOF -- "
 
