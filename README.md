@@ -1,3 +1,5 @@
 To install just run:
-
-    curl -s https://raw.github.com/voldmar/vimconfig/master/install.sh | bash
+    
+    git clone git@github.com:voldmar/vimconfig.git ~/.vim
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    ln -s ~/.vim/vimrc .vimrc
