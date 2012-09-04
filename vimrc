@@ -155,27 +155,27 @@ nnoremap k gk
 runtime ftplugin/man.vim
 runtime macros/matchit.vim
 
-nnoremap <leader><space> :set invhlsearch<cr>:set hlsearch?<cr>
-nnoremap <leader>n :set number<cr>
-nnoremap <leader>N :set relativenumber<cr>
-nnoremap <leader>R :source ~/.vimrc<cr>
+noremap <leader><space> :set invhlsearch<cr>:set hlsearch?<cr>
+noremap <leader>n :set number<cr>
+noremap <leader>N :set relativenumber<cr>
+noremap <leader>R :source ~/.vimrc<cr>
 nnoremap K <nop>
-nnoremap <leader>u :!sudo service uwsgi restart<cr>
-nnoremap <Left> :colder<CR>
-nnoremap <Right> :cnewer<CR>
-nnoremap <Up> :cprev<CR>
-nnoremap <Down> :cnext<CR>
-nnoremap <leader>8 :call Flake8()<CR>
-nnoremap <leader>a :Ack <C-R><C-W><cr>
-nnoremap <leader>A :Ack -w <C-R><C-W><cr>
-nnoremap <leader>t :TagbarToggle<CR>
+noremap <leader>u :!sudo service uwsgi restart<cr>
+noremap <Left> :colder<CR>
+noremap <Right> :cnewer<CR>
+noremap <Up> :cprev<CR>
+noremap <Down> :cnext<CR>
+noremap <leader>8 :call Flake8()<CR>
+noremap <leader>a :Ack <C-R><C-W><cr>
+noremap <leader>A :Ack -w <C-R><C-W><cr>
+noremap <leader>t :TagbarToggle<CR>
 " Ack for the last search.
 nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
 nnoremap <leader>g :GundoToggle<CR>
-nnoremap <leader>l :Linediff<CR>
-nnoremap <leader>L :LinediffReset<CR>
-nnoremap <leader>r :silent redraw!<CR>
-nnoremap <leader><Tab> :NERDTreeToggle .<CR>
+noremap <leader>l :Linediff<CR>
+noremap <leader>L :LinediffReset<CR>
+noremap <leader>r :silent redraw!<CR>
+noremap <leader><Tab> :NERDTreeToggle .<CR>
 
 
 vnoremap < <gv
