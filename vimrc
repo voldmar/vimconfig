@@ -310,13 +310,11 @@ sign define SignSymbol linehl=SignColor texthl=SignColor text=»
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 let g:tagbar_autofocus = 1
 
-if exists("g:Powerline_loaded")
-    call Pl#Theme#ReplaceSegment('tagbar:currenttag', 'tagbar:fullcurrenttag')
-    call Pl#Theme#RemoveSegment('fileformat')
-    call Pl#Theme#RemoveSegment('fileencoding')
-    call Pl#Theme#RemoveSegment('filetype')
-    call Pl#Theme#RemoveSegment('lineinfo')
-endif
+call Pl#Theme#ReplaceSegment('tagbar:currenttag', 'tagbar:fullcurrenttag')
+call Pl#Theme#RemoveSegment('fileformat')
+call Pl#Theme#RemoveSegment('fileencoding')
+call Pl#Theme#RemoveSegment('filetype')
+call Pl#Theme#RemoveSegment('lineinfo')
 
 let g:NERDTreeQuitOnOpen = 1
 
