@@ -55,6 +55,8 @@ Bundle 'miripiruni/CSScomb-for-Vim.git'
 Bundle 'tpope/vim-fireplace.git'
 Bundle 'guns/vim-clojure-static.git'
 Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'vim-scripts/Align'
+Bundle 'vim-scripts/SQLUtilities'
 
 " Color schemes
 if $TERM == "xterm-256color"
