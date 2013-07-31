@@ -2,6 +2,7 @@
 " Vladimir Epifanov
 " https://github.com/voldmar/vimconfig
 
+set shell=/bin/bash
 set nocompatible " It’s 2012 
 filetype off 
 set runtimepath+=~/.vim/bundle/vundle
@@ -42,14 +43,18 @@ Bundle 'voldmar/Visual-Mark'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'AndrewRadev/linediff.vim'
 Bundle 'ameade/qtpy-vim'
-Bundle 'chilicuil/conque'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/applescript.vim'
 Bundle 'emezeske/paredit.vim'
-Bundle 'vim-scripts/VimClojure'
+Bundle 'thinca/vim-template'
+Bundle 'AndrewRadev/switch.vim'
+Bundle 'miripiruni/CSScomb-for-Vim.git'
+Bundle 'tpope/vim-fireplace.git'
+Bundle 'guns/vim-clojure-static.git'
+Bundle 'kien/rainbow_parentheses.vim'
 
 " Color schemes
 if $TERM == "xterm-256color"
@@ -58,11 +63,12 @@ if $TERM == "xterm-256color"
     let g:Powerline_symbols = 'fancy'
     let g:Powerline_cache_enabled = 1
     let g:Powerline_colorscheme = 'skwp'
-    Bundle 'Lokaltog/vim-powerline'
+    " Bundle 'Lokaltog/vim-powerline'
 endif
 Bundle 'vim-scripts/xterm16.vim'
 
 filetype plugin indent on
+
 
 " It should be here because syntax highlight will be off overwise
 autocmd!
@@ -75,6 +81,9 @@ set backspace=2
 set nobackup
 set nowritebackup
 set noswapfile
+set complete-=t
+set complete-=k
+set complete-=i
 set clipboard=unnamed
 set cmdheight=2 " For bufexplorer
 set cursorline
@@ -83,6 +92,7 @@ set exrc
 set foldlevel=25
 set foldmethod=indent
 set grepprg=grep\ -rien\ --exclude-dir=.git\ --exclude=tags\ $*
+set guifont=Menlo\ Regular:h14
 set hidden
 set history=200
 set hlsearch
@@ -98,7 +108,8 @@ set mouse=a
 set nofoldenable
 set nowrap
 set number
-set pastetoggle=<leader>p
+set pastetoggle=<leader>P
+set path=.,,**
 set ruler
 set scrolloff=3
 set secure
@@ -152,7 +163,6 @@ endif
 nnoremap j gj
 nnoremap k gk
 
-runtime ftplugin/man.vim
 runtime macros/matchit.vim
 
 noremap <leader><space> :set invhlsearch<cr>:set hlsearch?<cr>
@@ -176,6 +186,9 @@ noremap <leader>l :Linediff<CR>
 noremap <leader>L :LinediffReset<CR>
 noremap <leader>r :silent redraw!<CR>
 noremap <leader><Tab> :NERDTreeToggle .<CR>
+noremap <leader><S-Tab> :exec "NERDTreeToggle " . expand('%:p:h')<CR>
+nnoremap - :Switch<cr>
+nnoremap <silent> <leader>f :let @* = @%<CR>
 
 
 vnoremap < <gv
@@ -243,13 +256,14 @@ augroup vimconfig
 augroup END
 
 augroup python
+    " choose one from pdb, ipdb, pudb
     autocmd FileType python map <buffer> <silent> +m :call ShowDoc("<C-R><C-W>")<CR>
     autocmd FileType python set makeprg=pyflakes\ %
     autocmd FileType python setlocal colorcolumn=80
     autocmd FileType python let g:qtpy_shell_command = "./manage.py test"
     autocmd FileType python nnoremap <leader>m :QTPY method<CR>
     autocmd FileType python nnoremap <leader>M :QTPY method verbose<CR>
-    autocmd FileType python nnoremap <silent> <leader>P :let @* = expand("%") . ":" .  tagbar#currenttag("%s", "", "f") <CR>
+    autocmd FileType python nnoremap <silent> <leader>p :let @* = expand("%") . ":" .  tagbar#currenttag("%s", "", "f") <CR>
     autocmd FileType python set path+=templates " django templates
 augroup END
 autocmd FileType xhtml set filetype=htmldjango.html
@@ -260,7 +274,14 @@ augroup clojure
     autocmd FileType clojure set tabstop=2
     autocmd FileType clojure set softtabstop=2
     autocmd FileType clojure set path+=src
+    autocmd FileType clojure iabbr .l (.log js/console )
+    autocmd FileType clojure iabbr .lp (.log js/console (pr-str ))
     autocmd BufRead,BufNewFile *.cljs set filetype=clojure
+    autocmd Filetype clojure RainbowParenthesesToggle
+    autocmd Filetype clojure RainbowParenthesesLoadRound
+    autocmd Filetype clojure RainbowParenthesesLoadSquare
+    autocmd Filetype clojure RainbowParenthesesLoadBraces
+
 augroup END
 
 augroup applescript
@@ -310,13 +331,17 @@ sign define SignSymbol linehl=SignColor texthl=SignColor text=»
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 let g:tagbar_autofocus = 1
 
-call Pl#Theme#ReplaceSegment('tagbar:currenttag', 'tagbar:fullcurrenttag')
-call Pl#Theme#RemoveSegment('fileformat')
-call Pl#Theme#RemoveSegment('fileencoding')
-call Pl#Theme#RemoveSegment('filetype')
-call Pl#Theme#RemoveSegment('lineinfo')
+"call Pl#Theme#ReplaceSegment('tagbar:currenttag', 'tagbar:fullcurrenttag')
+"call Pl#Theme#RemoveSegment('fileformat')
+"call Pl#Theme#RemoveSegment('fileencoding')
+"call Pl#Theme#RemoveSegment('filetype')
+"call Pl#Theme#RemoveSegment('lineinfo')
 
 let g:NERDTreeQuitOnOpen = 1
+
+let g:NERDSpaceDelims = 1
+
+" syntax off
 
 " -- EOF -- "
 
